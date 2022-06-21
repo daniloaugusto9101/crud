@@ -58,32 +58,22 @@ const salvarCliente = () => {
 
         }
 
+        const index = document.getElementById("nome").dataset.index
+
+        if (index == "new") {
             cadastrarCliente(cliente);
             mostrarTabela();
             fecharModal();
-            console.log("Novo cliente")
+        }else{
+            atualizarCliente(index, cliente);
+            mostrarTabela();
+            fecharModal();
+        }
 
-        // const index = document.getElementById("nome").dataset.index
-
-        // if(index == "new"){
-        //     cadastrarCliente(cliente);
-        //     mostrarTabela();
-        //     fecharModal();
-        //     console.log("Novo cliente")
-            
-        // }else{
-        //     editarCliente(index, cliente);
-        //     mostrarTabela();
-        //     fecharModal();
-        //     console.log("Atualziar cliente")
-        // }
 
     }
 
 }
-
-
-
 
 
 const camposPreenchidos = (cliente) => {
@@ -91,15 +81,14 @@ const camposPreenchidos = (cliente) => {
     document.querySelector("#email").value = cliente.email;
     document.querySelector("#celular").value = cliente.celular;
     document.querySelector("#cidade").value = cliente.cidade;
-    document.querySelector("#nome").dataset.index = cliente.index;
+    document.getElementById("nome").dataset.index = cliente.index;
 }
 
 const editarCliente = (index) => {
-    const dbCliente = getLocalStorage();
+    const dbCliente = getLocalStorage()[index];
     dbCliente.index = index;
-    camposPreenchidos(dbCliente[index]); 
+    camposPreenchidos(dbCliente); 
     abrirModal();
-    
 }
 
 
