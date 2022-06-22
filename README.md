@@ -28,10 +28,10 @@ CRUD
 # Exemplo do site em funcionamento
 <div>
 
-<!-- <a href="https://daniloaugusto9101.github.io/tarefas/" title="Danilo" target="_blank">
+<a href="https://daniloaugusto9101.github.io/tarefas/" title="Danilo" target="_blank">
 <p>Site em funcionamento, clique aqui</p>
 <img src="site.gif" width="800px">
-</a> -->
+</a>
  
  
 
